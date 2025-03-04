@@ -3,7 +3,7 @@ class Mangrove < Formula
   homepage "https://github.com/mangrove"
   url "https://github.com/swamp/mangrove/releases/download/v0.0.10/mangrove-darwin-x86_64.tar.gz"
   version "0.0.10"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "7e4c75f17aba2e3fd7fd50494dc2dd646db1223664677e196c543d3109cf7f6d"
 
   def install
     prefix.install Dir["mangrove/*"]
