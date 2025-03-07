@@ -1,9 +1,9 @@
 class Mangrove < Formula
   desc "Mangrove (Unsigned)"
   homepage "https://github.com/mangrove"
-  url "https://github.com/swamp/mangrove/releases/download/v0.0.14/mangrove-darwin-x86_64.tar.gz"
-  version "0.0.14"
-  sha256 "559e17e2e9fa9bd18da9012ce99985696d77af2acf6aa29e8f569ebe5e4cc0b9"
+  url "https://github.com/swamp/mangrove/releases/download/v0.0.15/mangrove-darwin-x86_64.tar.gz"
+  version "0.0.15"
+  sha256 "6fcf12cfafaa84657fb9485728c239c60d9965ca515eecfb1c8be58c31659421"
 
   def install
     prefix.install Dir["mangrove/*"]
