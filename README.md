@@ -9,5 +9,5 @@ curl -L https://github.com/swamp/mangrove/releases/download/v0.0.7/mangrove-darw
 ## To test locally
 
 ```sh
-brew install --build-from-source ./Formula/mangrove.rb
+brew install --build-from-source ./mangrove.rb
 ```
