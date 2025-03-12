@@ -1,13 +1,13 @@
 class Mangrove < Formula
   desc "Mangrove (Unsigned)"
   homepage "https://github.com/mangrove"
-  url "https://github.com/swamp/mangrove/releases/download/v0.0.18/mangrove-darwin-x86_64.tar.gz"
-  version "0.0.18"
-  sha256 "9bde37f6ec82c73bde29ab5f54fbc48feef9099bc85a5be97a930b89b6523322"
+  url "https://github.com/swamp/mangrove/releases/download/v0.0.19/mangrove-darwin-x86_64.tar.gz"
+  version "0.0.19"
+  sha256 "f8793e734db562f3180fc094ad3fc720c4f514fb64686329ebb5137065b4c0ed"
 
   resource "packages" do
-    url "https://github.com/swamp/mangrove/releases/download/v0.0.18/packages.tar.gz"
-    sha256 "44fa57e51f4d9613140ad794595595bc04cf133e27ca08008e676631c79e3a88"
+    url "https://github.com/swamp/mangrove/releases/download/v0.0.19/packages.tar.gz"
+    sha256 "7f4c862b4d239810b4a414c631d1901d1e88cacc3f7b0ce15a54e9ac1329918e"
   end
 
   def install
@@ -32,12 +32,20 @@ class Mangrove < Formula
       By default, Mangrove expects its packages to be located in ~/.swamp/packages.
       To ensure Mangrove can find these files, you have two options:
 
-        1. Update the SWAMP_HOME environment variable:
-           export SWAMP_HOME="#{opt_pkgshare}"
+        a. Update the SWAMP_HOME environment variable:
 
-        2. Copy the packages to your home directory:
-           mkdir -p ~/.swamp/packages
-           cp -R #{opt_pkgshare}/packages/* ~/.swamp/packages/
+            export SWAMP_HOME="#{opt_pkgshare}"
+
+            You probably want to add this to your shell configuration file (~/.zshrc):
+
+                export SWAMP_HOME="$(brew --prefix mangrove)/share/mangrove"
+
+                or do it automatically:
+
+                echo 'export SWAMP_HOME="$(brew --prefix mangrove)/share/mangrove"' >> ~/.zshrc
+
+        b. Symlink the packages
+           ln -s #{opt_pkgshare} ~/.swamp
 
       Choose the option that works best for your workflow.
 
