@@ -1,13 +1,13 @@
 class Mangrove < Formula
   desc "Mangrove (Unsigned)"
   homepage "https://github.com/fengrove"
-  url "https://github.com/fengrove/fengrove/releases/download/v0.0.31/mangrove-darwin-x86_64.tar.gz"
-  version "0.0.31"
-  sha256 "28554b13bb0bd855b15669327cecdfa3dd9912b999e69aca5c6c4615fab49c15"
+  url "https://github.com/fengrove/fengrove/releases/download/v0.0.32/mangrove-darwin-x86_64.tar.gz"
+  version "0.0.32"
+  sha256 "5934a54c7395b20cc6cbaf2670b4b891fe74c05b3a6ecdae9364d38886069cb5"
 
   resource "packages" do
-    url "https://github.com/fengrove/fengrove/releases/download/v0.0.31/packages.tar.gz"
-    sha256 "83c15b37c4aa481a2a17d259381fde9b16479d9f4e5f6b01afe7feb4cee7b321"
+    url "https://github.com/fengrove/fengrove/releases/download/v0.0.32/packages.tar.gz"
+    sha256 "c2d25bc5a2085dc298a39b3942c9bd8558846f90f2dbb7e3f506e3cb35e5f7d5"
   end
 
   def install
