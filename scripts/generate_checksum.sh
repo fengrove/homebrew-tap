@@ -2,7 +2,7 @@
 
 REPO_OWNER="fengrove"
 REPO_NAME="fengrove"
-FILE1="mangrove-darwin-x86_64.tar.gz"
+FILE1="mangrove-darwin-arm64.tar.gz"
 FILE2="packages.tar.gz"
 
 
