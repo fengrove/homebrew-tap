@@ -1,35 +1,38 @@
 class Mangrove < Formula
   desc "Mangrove (Unsigned)"
   homepage "https://github.com/fengrove"
-	version "0.1.4"
-	# revision 1 # remove this later
+
+	MG_VERSION = "0.1.4" # brew is annoying that you can't use the normal version
+	version MG_VERSION
+	revision 1 # remove this later
 
 	on_arm do
-		url "https://github.com/fengrove/fengrove/releases/download/v#{version}/mangrove-darwin-arm64.tar.gz"
+		url "https://github.com/fengrove/fengrove/releases/download/v#{MG_VERSION}/mangrove-darwin-arm64.tar.gz"
 		sha256 "f9091b78d270f5cbdc872c13c162ea3350379c83e6ec25ca16a384d2ee8aa4e9"
 	end
 
 	#on_intel do
-	#  url "https://github.com/fengrove/fengrove/releases/download/v#{version}/mangrove-darwin-amd64.tar.gz"
+	#  url "https://github.com/fengrove/fengrove/releases/download/v#{MG_VERSION}/mangrove-darwin-amd64.tar.gz"
 	#  sha256 ""
 	#end
 
 	# Single resource for all architectures
 	resource "packages" do
-		url "https://github.com/fengrove/fengrove/releases/download/v#{version}/packages.tar.gz"
+		url "https://github.com/fengrove/fengrove/releases/download/v#{MG_VERSION}/packages.tar.gz"
 		sha256 "8263e737b356423798129637716ad6d9a08536993d37cc5836eb16e9ef7c60be"
 	end
 
-  def install
-    prefix.install Dir["mangrove/*"]
-    system "xattr", "-cr", prefix
 
-    bin.install "mangrove" => "mangrove"
+	def install
+		prefix.install Dir["mangrove/*"]
+		system "xattr", "-cr", prefix
 
-    resource("packages").stage do
-      (pkgshare/"packages").install Dir["*"]
-    end
-  end
+		bin.install "mangrove" => "mangrove"
+
+		resource("packages").stage do
+			(pkgshare/"packages").install Dir["*"]
+		end
+	end
 
   def caveats
     s = <<~EOS
