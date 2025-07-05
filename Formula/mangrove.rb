@@ -4,7 +4,7 @@ class Mangrove < Formula
 
 	MG_VERSION = "0.1.5" # brew is annoying that you can't use the normal version field
 	version MG_VERSION
-	# revision 1 // only needed if upload goes wrong
+	revision 1 # only need revision number if a previous git push was incorrect
 
 	on_arm do
 		url "https://github.com/fengrove/fengrove/releases/download/v#{MG_VERSION}/mangrove-darwin-arm64.tar.gz"
@@ -29,8 +29,13 @@ class Mangrove < Formula
 
 		bin.install "mangrove" => "mangrove"
 
+		# Homebrew has a pretty strange behavior where it extracts a tar.gz file
+		# in different ways, depending on the structure and/or how many files are within the archive.
+		# So we have to do a manual copy instead of the more cool `(pkgshare/"packages").install Dir["mangrove"]`
 		resource("packages").stage do
-			(pkgshare/"packages").install Dir["*"]
+			dest = pkgshare/"packages"
+			dest.mkpath
+			FileUtils.cp_r Dir["*"], dest
 		end
 	end
 
