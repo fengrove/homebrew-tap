@@ -2,13 +2,13 @@ class Mangrove < Formula
   desc "Mangrove (Unsigned)"
   homepage "https://github.com/fengrove"
 
-	MG_VERSION = "0.1.47" # brew is annoying that you can't use the normal version field
+	MG_VERSION = "0.1.48" # brew is annoying that you can't use the normal version field
 	version MG_VERSION
 	# revision 2 # only need revision number if a previous git push was incorrect
 
 	on_arm do
 		url "https://github.com/fengrove/fengrove/releases/download/v#{MG_VERSION}/mangrove-darwin-arm64.tar.gz"
-		sha256 "1919a1315f523d04a7f5982b565dbade59949c4a0502fafc42dcced52f4c086c"
+		sha256 "839e456b19d0c0b3f0367cb3ed6990d68b3905b6a2b573418dad2121954cfb86"
 	end
 
 	#on_intel do
